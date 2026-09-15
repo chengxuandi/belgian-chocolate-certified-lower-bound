@@ -6,3 +6,4 @@
 *.log text eol=lf
 *.pdf binary
 *.zip binary
+LICENSE text eol=lf
