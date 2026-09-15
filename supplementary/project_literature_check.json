@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-15",
+  "confirmed_public_lower_bound": "0.9808348",
+  "primary_sources": [
+    "https://arxiv.org/abs/1708.08114",
+    "https://link.springer.com/article/10.1007/s10898-018-0659-5"
+  ],
+  "additional_queries": [
+    "Belgian Chocolate Problem 2024",
+    "Belgian Chocolate Problem 2025 lower bound",
+    "Belgian Chocolate Problem 2026",
+    "Belgian Chocolate 0.983"
+  ],
+  "result": "No credible conflicting higher public lower bound found. Search is not a proof of priority.",
+  "additional_primary_lead": {
+    "url": "https://jhkim.me/",
+    "description": "Stabilizing Controllers with Root Based Polynomial Regression, previous project",
+    "disposition": "Mentions BCP but provides no numerical lower bound or linked proof in the inspected page; not evidence of a conflicting certified bound."
+  }
+}

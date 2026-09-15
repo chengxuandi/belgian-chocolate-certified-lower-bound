@@ -1,0 +1,10 @@
+DEGREE = PASS
+IDENTITY = PASS
+X_HURWITZ = PASS
+Y_HURWITZ = PASS
+P_HURWITZ = PASS
+DELTA = 1969263222086617/2000000000000000
+WITNESS_SHA256 = 02cce7aa82f7a2d9f15acad837cab2d4be9020b71d7b5998e663da3126625655
+EVIDENCE = {"p": {"positive_leading_minors": 74, "primitive_integer_minors_sha256": "b58602099c5b9524ec51b7e1c4c4b6216fc60d5b737e7dfa61d8d27994b22b17"}, "x": {"positive_leading_minors": 72, "primitive_integer_minors_sha256": "4f8d678af9ddfbfd53bba0d6ff3d3e4356dced7bff17481b00360d03c083ec39"}, "y": {"positive_leading_minors": 72, "primitive_integer_minors_sha256": "42f467c57b6db9c031b1fee5bb24b9c1dd0087f8d8bc647229e345b54c7984c7"}}
+SECONDS = 598.558
+FINAL = PASS

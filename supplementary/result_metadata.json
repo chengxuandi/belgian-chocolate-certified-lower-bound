@@ -1,0 +1,63 @@
+{
+  "delta": "1969263222086617/2000000000000000",
+  "decimal": "0.9846316110433085",
+  "previous_public_lower_bound": "0.9808348",
+  "improvement": "7593622086617/2000000000000000",
+  "improvement_decimal": "0.0037968110433085",
+  "degrees": {
+    "x": 72,
+    "y": 72,
+    "p": 74
+  },
+  "witness_sha256": "02cce7aa82f7a2d9f15acad837cab2d4be9020b71d7b5998e663da3126625655",
+  "payload_sha256": "ada990c9fef82069256433e5a85b986a2addd9f2b73f2354e2fff48dfe1f9684",
+  "source_sha256": "9607df826ee9e4d2054e30d0fb7900f297a1fd996e44ee1bce4ff8e564defe19",
+  "configuration": {
+    "j": [
+      11,
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1
+    ],
+    "k": [
+      6,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1
+    ],
+    "ell": [
+      5,
+      3,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1
+    ],
+    "degree_x": 72,
+    "zero_power_s": 40
+  },
+  "matching_existing_certificates": 107,
+  "source": "D:\\ai4sc\\output\\gbcp_frontier_20260915\\rescue\\n0085_d72\\parent_seeds\\trial_0\\witness_16.json",
+  "selection": "maximum of existing exact-certified witnesses; no new target generated"
+}

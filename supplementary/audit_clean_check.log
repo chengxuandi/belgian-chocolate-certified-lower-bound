@@ -1,0 +1,12 @@
+Command: python -I -S -u audit_final_witness.py
+Directory: clean_check (only WITNESS_FINAL.txt and two standalone checkers)
+DEGREE = PASS
+IDENTITY = PASS
+P_ROUTH = PASS; positive rows = 75
+Y_ROUTH = PASS; positive rows = 73
+X_ROUTH = PASS; positive rows = 73
+DELTA = 1969263222086617/2000000000000000
+WITNESS_SHA256 = 02cce7aa82f7a2d9f15acad837cab2d4be9020b71d7b5998e663da3126625655
+SECONDS = 93.904
+INDEPENDENT_AUDIT = PASS
+FINAL = PASS

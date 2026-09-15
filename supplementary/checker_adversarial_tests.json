@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "cases": [
+    "stable product degree 1: explicit permutation determinants and Routh agree",
+    "stable product degree 2: explicit permutation determinants and Routh agree",
+    "stable product degree 3: explicit permutation determinants and Routh agree",
+    "stable product degree 4: explicit permutation determinants and Routh agree",
+    "stable product degree 5: explicit permutation determinants and Routh agree",
+    "stable product degree 6: explicit permutation determinants and Routh agree",
+    "both reject [2, 1, 1, 1]",
+    "both reject [1, 0, 1]",
+    "both reject [-1, 1]",
+    "both reject one_integer_changed",
+    "both reject wrong_delta",
+    "both reject reversed_arrays"
+  ]
+}

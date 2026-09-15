@@ -1,0 +1,167 @@
+\documentclass[UTF8,a4paper,11pt,fontset=windows]{ctexart}
+\usepackage[margin=24mm,top=22mm,bottom=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,fancyhdr,xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,pdftitle={Belgian Chocolate Problem 的一个新的认证下界},pdfauthor={}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Belgian Chocolate Problem：显式有理证书}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{15pt}
+\newcommand{\deltaz}{\frac{1969263222086617}{2000000000000000}}
+\newcommand{\file}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\pass}{\textsf{PASS}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Belgian Chocolate Problem\\[5pt]的一个新的认证下界}\\[9pt]
+{\large 显式 Hurwitz 多项式证书与独立精确核验}\\[6pt]
+{\small 项目成果中文核验说明}
+\end{center}
+\section*{摘要}
+本文给出参数 $\delta_0=\deltaz=0.9846316110433085$ 的显式有限次数有理多项式证书。
+该值超过 Charles--Boston 2018 报告的公开下界 $0.9808348$。
+两个互不调用的 Python 标准库核验器从同一整数系数文件出发，分别完成 Hurwitz 主子式检查和独立 Routh 表检查。
+本结果仅改进 lower bound，不声称解决完整 GBCP。
+
+\section{问题定义}
+本文所称 Generalized Belgian Chocolate Problem（GBCP）固定为下述原始多项式 formulation：
+\[
+ a_\delta(s)=s^2-2\delta s+1,\qquad b(s)=s^2-1.
+\]
+称 $\delta$ \emph{admissible}，若存在非零实系数多项式 $x(s),y(s),p(s)$，满足
+\[
+ \deg x\ge\deg y,\qquad p(s)=a_\delta(s)x(s)+b(s)y(s),
+\]
+且 $x,y,p$ 的每个根 $\lambda$ 均严格满足 $\operatorname{Re}\lambda<0$，即三者均为严格 Hurwitz 多项式。
+这里只讨论该 formulation，不引入单位圆约定或其他同名变体。
+
+以 $\delta^*$ 表示可行参数的临界值：$\delta<\delta^*$ 可行，$\delta>\delta^*$ 不可行。
+本文只证明一个有限参数可行，从而给出 $\delta^*$ 的下界。
+
+\section{主结果}
+\noindent\fbox{\begin{minipage}{0.94\linewidth}
+\textbf{定理（显式有理证书）。} 参数
+\[
+ \delta_0=\deltaz=0.9846316110433085
+\]
+admissible。具体存在 $x,y,p\in\mathbb Q[s]$，实际次数为 $(72,72,74)$，均非零、严格 Hurwitz，并满足原始恒等式及 $\deg x\ge\deg y$。因此
+\[
+ \boxed{\delta^*\ge\delta_0}.
+\]
+\end{minipage}}
+
+\noindent 证书为同目录的 \file{WITNESS_FINAL.txt}。定理的证据是该文件中的有限整数数组与下文的精确验收；数值搜索过程不是证明前提。
+
+\newpage
+\section{证书摘要与数据约定}
+令 $X_i,Y_i,P_i$ 表示证书文件中的完整整数数组，\textbf{均按 $s$ 的升幂排列}：
+\begin{align*}
+ x(s)&=D_x^{-1}\sum_{i=0}^{72}X_i s^i, & D_x&=10^{800},\\
+ y(s)&=D_y^{-1}\sum_{i=0}^{72}Y_i s^i, & D_y&=10^{800},\\
+ p(s)&=D_p^{-1}\sum_{i=0}^{74}P_i s^i, & D_p&=2\cdot10^{815}.
+\end{align*}
+三个数组分别含 73、73、75 个整数。其最高次系数非零且为正，所以实际次数确为 72、72、74，并非仅由数组长度推定。
+完整整数过长，不在 PDF 正文重复；\file{WITNESS_FINAL.txt} 已完整列出全部分母和数组，读者不需要运行任何生成脚本才能理解它们。
+
+\begin{center}
+\begin{tabular}{lccc}\toprule
+ & $x$ & $y$ & $p$\\\midrule
+实际次数 & 72 & 72 & 74\\
+整数系数个数 & 73 & 73 & 75\\
+Hurwitz 顺序主子式数 & 72 & 72 & 74\\
+Routh 首列项数 & 73 & 73 & 75\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{固定文件的 SHA-256}
+\noindent 对 \file{WITNESS_FINAL.txt} 的全部 UTF-8 文件字节计算 SHA-256，得到：
+\begin{center}\footnotesize\ttfamily 02cce7aa82f7a2d9f15acad837cab2d4be9020b71d7b5998e663da3126625655\end{center}
+该文件哈希与 README 及 \file{SHA256SUMS.txt} 一致。TXT 内另列有规范化数学数据的 payload 哈希；它校验 JSON 数学数据，与整个 TXT 的文件字节哈希是两个不同对象。
+
+\subsection*{定理如何从证书得到}
+第一步，将分母和整数数组重建为 $\mathbb Q[s]$ 中的三个多项式；第二步，逐系数检查
+\[
+ p-(s^2-2\delta_0s+1)x-(s^2-1)y=0;
+\]
+第三步，检查次数条件和三个多项式的严格 Hurwitz 性。全部条件成立后，直接应用第 1 节定义即可推出 admissibility，进而得到 $\delta^*\ge\delta_0$。
+
+该推论不需要断言搜索穷尽了全部配置，也不需要判断任何浮点根的实部是否接近零。本文没有为了扩大结论再生成或验证一个更大的参数。
+
+\newpage
+\section{精确核验}
+对实多项式 $f(s)=a_0s^n+a_1s^{n-1}+\cdots+a_n$，$a_0>0$，定义
+\[
+ H(f)_{ij}=a_{2j-i}\quad(1\le i,j\le n),\qquad
+ a_k=0\ \text{若 }k\notin\{0,\ldots,n\}.
+\]
+按 Routh--Hurwitz 判据，$f$ 严格 Hurwitz 当且仅当所有顺序主子式
+\[
+ \Delta_k(f)=\det H(f)_{1:k,1:k}>0,\qquad k=1,\ldots,n.
+\]
+主核验器 \file{verify_final_witness.py} 显式构造三个完整 Hurwitz 矩阵，使用 Bareiss 整数消元\cite{bareiss}计算全部所需主子式。每次整除都检查余数为零。约去系数的正公共因子只对第 $k$ 个主子式作正比例缩放，故不改变判据。
+
+\begin{center}
+\begin{tabular}{p{0.67\linewidth}c}\toprule
+核验项目 & 结果\\\midrule
+原始多项式恒等式（精确有理系数） & \pass\\
+非零、实际次数与 $\deg x\ge\deg y$ & \pass\\
+$x$：全部 72 个 Hurwitz 顺序主子式严格为正 & \pass\\
+$y$：全部 72 个 Hurwitz 顺序主子式严格为正 & \pass\\
+$p$：全部 74 个 Hurwitz 顺序主子式严格为正 & \pass\\
+独立 exact Routh table（共 221 个首列项） & \pass\\\bottomrule
+\end{tabular}
+\end{center}
+
+第二核验器 \file{audit_final_witness.py} 不调用主程序。它独立解析文件，用稀疏多项式乘法检查恒等式，再构造 Routh 表。为避免有理分数膨胀，每行仅做正整数比例缩放；这不改变首列符号。零行或零枢轴直接拒绝，绝不以数值 epsilon 替代。
+
+\section{如何复核}
+在解压后的材料目录，使用 Python 3.10 或更新版本执行：
+\begin{quote}\ttfamily
+python verify\_final\_witness.py\\
+python audit\_final\_witness.py
+\end{quote}
+两者均只依赖 Python 标准库，只读取同目录的 \file{WITNESS_FINAL.txt}；不导入搜索代码、生成代码、数值候选或第三方 CAS。两条命令均应以 \file{FINAL = PASS} 结束。
+
+本轮已将三个文件复制到干净目录，以 \file{python -I -S} 重放，隔离外部模块路径并禁用 site 初始化。完整输出、针对性反例检查与验收元数据保存于 \file{supplementary/}。本机主核验耗时约 603 秒，独立审计约 94 秒；其他机器耗时会不同。
+
+\newpage
+\section{与已有结果的关系}
+Charles--Boston 的正式论文发表于 2018 年，报告 $0.9808348$ admissible\cite{cb}。本证书给出更大的可行参数：
+\begin{align*}
+ \delta_0&=\deltaz=0.9846316110433085,\\
+ \delta_0-0.9808348
+ &=\frac{7593622086617}{2000000000000000}\\
+ &=0.0037968110433085>0.
+\end{align*}
+\textbf{截至本项目当前检索，未发现公开结果超过该值。}
+这是一项有边界的文献检索陈述，不等于已确定世界纪录。本文不声称全局最优，也不确定 $\delta^*$ 的精确位置；同时稳定化的背景可参见 Blondel\cite{blondel}。
+
+\section{发现方法与证明的区别}
+候选来自 algebraic/quasi-admissible configuration 的增长与多初值数值求根。随后通过严格区间隔离、从 quasi 到 strict stable 的变换，以及系数有理化形成最终候选。
+这些步骤解释\emph{证书如何被发现}；最终正确性则由实际保存的 $\delta_0,x,y,p$ 及两套独立整数／有理数核验建立。
+
+\begin{center}
+\textbf{numerical search = discovery}\qquad
+\textbf{exact rational witness = proof}
+\end{center}
+即使发现过程中存在数值误差，只要最终有限证书独立通过精确验收，本下界定理仍然成立。
+详细方法放在 \file{SEARCH_METHOD_APPENDIX_CN.md}，不混入主证明。
+本轮只整理和复核已有最好证书，没有继续推进参数，也不将用户要求停止搜索的检查点解释为路线饱和。
+
+\begin{thebibliography}{9}\small
+\bibitem{cb} Z. Charles and N. Boston.
+Exploiting algebraic structure in global optimization and the Belgian chocolate problem.
+\emph{Journal of Global Optimization}, 72:241--254, 2018.
+\href{https://doi.org/10.1007/s10898-018-0659-5}{doi:10.1007/s10898-018-0659-5}.
+\bibitem{blondel} V. Blondel.
+\emph{Simultaneous Stabilization of Linear Systems}.
+Lecture Notes in Control and Information Sciences 191, Springer, 1994.
+\href{https://doi.org/10.1007/3-540-19862-8}{doi:10.1007/3-540-19862-8}.
+\bibitem{bareiss} E. H. Bareiss.
+Sylvester's identity and multistep integer-preserving Gaussian elimination.
+\emph{Mathematics of Computation}, 22(103):565--578, 1968.
+\href{https://doi.org/10.1090/S0025-5718-1968-0226829-0}{doi:10.1090/S0025-5718-1968-0226829-0}.
+\end{thebibliography}
+\end{document}
