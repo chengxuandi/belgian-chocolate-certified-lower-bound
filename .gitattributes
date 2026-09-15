@@ -6,4 +6,5 @@
 *.log text eol=lf
 *.pdf binary
 *.zip binary
+*.gitattributes text eol=lf
 LICENSE text eol=lf
