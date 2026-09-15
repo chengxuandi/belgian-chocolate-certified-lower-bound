@@ -41,6 +41,37 @@ PDF 供阅读、转发和打印；可执行证书及两套脚本负责独立复�
 
 TXT 内另有规范化数学数据的 payload SHA-256；它与整个 TXT 的文件哈希不是同一对象。全部发布文件的字节哈希见 `SHA256SUMS.txt`。
 
+## AI-assisted discovery / Agent 使用说明
+
+本项目在候选发现阶段使用了自主 LLM Agent。Agent 不作为最终数学证明的
+可信来源；最终 lower bound 仅依赖公开的显式有理多项式 witness 以及两
+个独立 exact verifier。
+
+Charles–Boston 的 algebraic/quasi-admissible 框架属于已有文献。Agent
+没有从零发明该框架，而是在其上自主选择、扩展和导航 configuration
+growth、balanced split/merge、origin-growth、multi-branch frontier、
+scaled Newton、Jacobian 加速和 parent-growth fallback 等搜索策略。具体
+归因和证据见：
+
+- [`AGENT_PROVENANCE.md`](AGENT_PROVENANCE.md)：人类整理的 AI/Agent 使用
+  说明和归因表；
+- [`provenance/ORIGINAL_AGENT_METHOD_LOG.md`](provenance/ORIGINAL_AGENT_METHOD_LOG.md)：
+  原始 `Method and proof boundary` 记录，保持原样；
+- [`SEARCH_METHOD_APPENDIX_CN.md`](SEARCH_METHOD_APPENDIX_CN.md)：搜索和
+  certification pipeline 的技术整理；
+- [`supplementary/search/`](supplementary/search/)：选取的搜索代码、审查
+  脚本和中间记录。
+
+如果只希望核验数学结果，不需要阅读这些搜索记录。直接运行：
+
+```console
+python verify_final_witness.py
+python audit_final_witness.py
+```
+
+数值搜索和 Agent 输出只负责 discovery；最终 theorem 只由显式有理证书
+和 exact verification 建立。
+
 ## 整理范围
 
 本轮从现有已通过精确验收的产物中选择最大参数，重写独立核验器并重放证书；没有搜索或生成更大的参数。旧搜索停止于用户要求整理材料的检查点，不据此声称路线已饱和。

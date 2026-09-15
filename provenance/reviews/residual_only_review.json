@@ -1,0 +1,26 @@
+[
+  {
+    "node": "n0001_d22",
+    "full_seconds": 0.021841800000402145,
+    "residual_only_seconds": 0.012292200000956655,
+    "mp_residual_identical": true,
+    "exact_interval_residual_identical": true,
+    "existing_interval_certificate_passed": true
+  },
+  {
+    "node": "n0062_d64",
+    "full_seconds": 0.23994820000370964,
+    "residual_only_seconds": 0.09052410000003874,
+    "mp_residual_identical": true,
+    "exact_interval_residual_identical": true,
+    "existing_interval_certificate_passed": true
+  },
+  {
+    "node": "n0072_d68",
+    "full_seconds": 0.2846850999922026,
+    "residual_only_seconds": 0.10661709999840241,
+    "mp_residual_identical": true,
+    "exact_interval_residual_identical": true,
+    "existing_interval_certificate_passed": true
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "degree": 60,
+  "witness_sha256": "7c9cf57a828ecd1f807f9aa04e7d3e3c30af558bfeacac9ca198183673f0ff76",
+  "all_proof_values_identical_to_serial": true,
+  "measured_parallel_seconds": 25.66967289999593,
+  "verifier_sha256": "5e872cb20175759e48dd6007de18e9ddfe2acc717cd0b7bc976d2183258b0ef6",
+  "serial_snapshot_sha256": "5a0138cd5d6d6f6bcf4226b79cf33c8c3a66ba265a25e824db85a6f6dc7ebc7f"
+}

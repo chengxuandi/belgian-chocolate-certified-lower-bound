@@ -1,0 +1,8 @@
+{
+  "same_exact_target": "9842169814966793/10000000000000000",
+  "original_digits": 1012,
+  "reduced_digits": 584,
+  "reduced_witness_sha256": "3dc10a5065f8de94b0bc52b71477d338ba08075295972d9ab9cb9b6e8f88739f",
+  "all_exact_checks_passed": true,
+  "measured_reduced_seconds": 33.016597900001216
+}

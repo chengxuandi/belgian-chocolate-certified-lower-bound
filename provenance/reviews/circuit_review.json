@@ -1,0 +1,76 @@
+[
+  {
+    "configuration": {
+      "j": [
+        5,
+        2,
+        2,
+        1
+      ],
+      "k": [
+        3,
+        2,
+        1
+      ],
+      "ell": [
+        3,
+        1,
+        1
+      ],
+      "degree_x": 22,
+      "zero_power_s": 14
+    },
+    "all_coefficient_equations_and_jacobian_entries_agree_exactly": true,
+    "comparison_is_a_symbolic_polynomial_identity_not_only_point_sampling": true
+  },
+  {
+    "configuration": {
+      "j": [
+        6,
+        2,
+        2,
+        1
+      ],
+      "k": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "ell": [
+        3,
+        2,
+        1
+      ],
+      "degree_x": 24,
+      "zero_power_s": 14
+    },
+    "all_coefficient_equations_and_jacobian_entries_agree_exactly": true,
+    "comparison_is_a_symbolic_polynomial_identity_not_only_point_sampling": true
+  },
+  {
+    "configuration": {
+      "j": [
+        6,
+        2,
+        2,
+        1
+      ],
+      "k": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "ell": [
+        3,
+        1,
+        1
+      ],
+      "degree_x": 24,
+      "zero_power_s": 16
+    },
+    "all_coefficient_equations_and_jacobian_entries_agree_exactly": true,
+    "comparison_is_a_symbolic_polynomial_identity_not_only_point_sampling": true
+  }
+]

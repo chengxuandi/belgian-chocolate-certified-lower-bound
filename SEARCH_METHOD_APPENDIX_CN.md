@@ -1,5 +1,13 @@
 # 搜索方法附录：发现与认证的边界
 
+> 本文档是搜索方法的整理版。Agent 的原始方法记录和运行中具体策略
+> 变化请见：`provenance/ORIGINAL_AGENT_METHOD_LOG.md`。
+>
+> 人类整理的 Agent 使用说明见：`AGENT_PROVENANCE.md`。
+
+搜索方法用于发现候选，不构成最终 lower-bound theorem 的证明；最终结论
+只由保存的有理数 witness 和两个独立 exact verifier 建立。
+
 本附录解释结果如何找到，**不是主定理的证明前提**。核心证明仅由最终 $\mathbb Q[s]$ 证书及独立精确验收组成。
 
 ## 1. 基线与 algebraic specification

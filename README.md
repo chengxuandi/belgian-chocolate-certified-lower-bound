@@ -72,6 +72,37 @@ https://github.com/chengxuandi/belgian-chocolate-problem-lean-proof-202609102100
 
 That repository should not be interpreted as a complete solution of the BCP. The two projects are logically independent: the earlier repository preserves Lean and threshold-structure investigations; this repository provides one explicit certified admissible lower bound.
 
+## AI-assisted discovery / Agent provenance
+
+This project used an autonomous LLM agent during candidate discovery. The
+agent is not a source of mathematical proof: the lower bound depends only on
+the explicit rational witness and the two independent exact verifiers above.
+Charles–Boston's algebraic/quasi-admissible framework is prior work; the agent
+selected, extended, and navigated search operators within that framework.
+
+For the concrete attribution and discovery history, see:
+
+- [`AGENT_PROVENANCE.md`](AGENT_PROVENANCE.md) — curated English/Chinese
+  explanation of human inputs, agent-directed actions, and the discovery/proof
+  boundary;
+- [`provenance/ORIGINAL_AGENT_METHOD_LOG.md`](provenance/ORIGINAL_AGENT_METHOD_LOG.md)
+  — the original `Method and proof boundary` record, preserved verbatim;
+- [`SEARCH_METHOD_APPENDIX_CN.md`](SEARCH_METHOD_APPENDIX_CN.md) — technical
+  summary of the search and certification pipeline;
+- [`supplementary/search/`](supplementary/search/) — selected search code,
+  review scripts, and intermediate records.
+
+If you only want to check the mathematics, you do not need to read the search
+history. Run:
+
+```bash
+python verify_final_witness.py
+python audit_final_witness.py
+```
+
+Search output has discovery status only. It is not a substitute for the
+finite rational certificate.
+
 ## License and citation
 
 The files in this repository are released under the MIT License. See `LICENSE`.

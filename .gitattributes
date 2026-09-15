@@ -8,3 +8,4 @@
 *.zip binary
 *.gitattributes text eol=lf
 LICENSE text eol=lf
+provenance/ORIGINAL_AGENT_METHOD_LOG.md -text

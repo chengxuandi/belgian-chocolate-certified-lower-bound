@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "candidate": "n0085_d72",
+  "independent_seed_selection_matched": true,
+  "exact_interval_replayed": true,
+  "source": "n0082_d70:grow_zero:new=1,existing=9,scale=0.75"
+}

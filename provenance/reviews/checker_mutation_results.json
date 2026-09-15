@@ -1,0 +1,22 @@
+[
+  {
+    "case": "one_integer_identity_error",
+    "rejected": true
+  },
+  {
+    "case": "wrong_target_parameter",
+    "rejected": true
+  },
+  {
+    "case": "false_actual_degree",
+    "rejected": true
+  },
+  {
+    "case": "positive_coefficients_but_unstable_x",
+    "rejected": true
+  },
+  {
+    "case": "stable_x_y_unstable_p",
+    "rejected": true
+  }
+]

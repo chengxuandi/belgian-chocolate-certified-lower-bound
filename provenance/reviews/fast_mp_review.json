@@ -1,0 +1,29 @@
+{
+  "exact_rational_division_examples_passed": true,
+  "cases": [
+    {
+      "node": "n0001_d22",
+      "reference_seconds": 0.00374030000239145,
+      "fast_seconds": 0.0032293999975081533,
+      "max_scaled_difference": "1.65847566405563e-139",
+      "only_candidate_proposal_changed": true,
+      "integer_interval_circuit_unchanged": true
+    },
+    {
+      "node": "n0062_d64",
+      "reference_seconds": 0.0981815999984974,
+      "fast_seconds": 0.019216300002881326,
+      "max_scaled_difference": "1.86584343695935e-136",
+      "only_candidate_proposal_changed": true,
+      "integer_interval_circuit_unchanged": true
+    },
+    {
+      "node": "n0067_d66",
+      "reference_seconds": 0.11511179999797605,
+      "fast_seconds": 0.030571600000257604,
+      "max_scaled_difference": "9.00134386453247e-136",
+      "only_candidate_proposal_changed": true,
+      "integer_interval_circuit_unchanged": true
+    }
+  ]
+}
